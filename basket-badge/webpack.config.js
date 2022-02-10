@@ -1,25 +1,27 @@
-const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
+const ModuleFederationPlugin =
+  require("webpack").container.ModuleFederationPlugin;
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   devServer: {
-    port: 3001
+    port: 3001,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'basketBadge',
-      filename: 'remoteEntry.js',
+      name: "basketBadge",
+      filename: "remoteEntry.js",
       exposes: {
-        './Module': './src/bootstrap'
+        "./Module": "./src/bootstrap",
       },
       shared: [
         {
-          'event-store': {
-            import: '../event-store',
-            requiredVersion: require('../event-store/package.json').version,
-            singleton: true
-          }
-        }]
-    })
-  ]
+          "event-store": {
+            import: "../event-store",
+            requiredVersion: require("../event-store/package.json").version,
+            singleton: true,
+          },
+        },
+      ],
+    }),
+  ],
 };
