@@ -1,7 +1,31 @@
-import { eventStore } from "event-store";
+import { all, subscribe } from "event-store";
 
-export function mount(element) {
-  // element.innerHTML = '<p>basket-badge</p>';
-  eventStore.set("basket-badge", "payload");
-  console.log(eventStore);
+export function mount(elementId) {
+  const knownEvents = new Set();
+
+  let quantitySum = 0;
+
+  function updateQuantity(eventId, eventData) {
+    if (eventData.type !== "UPDATE_BASKET" || knownEvents.has(eventId)) {
+      return;
+    }
+    knownEvents.add(eventId);
+    quantitySum += eventData.payload.quantity;
+  }
+
+  function updateDocument() {
+    document.getElementById(
+      elementId
+    ).innerHTML = `<p>Basket&nbsp;Badge:&nbsp;${quantitySum}</p>`;
+  }
+
+  subscribe((eventId, eventData) => {
+    updateQuantity(eventId, eventData);
+    updateDocument();
+  });
+
+  for (const [eventId, eventData] of all()) {
+    updateQuantity(eventId, eventData);
+  }
+  updateDocument();
 }

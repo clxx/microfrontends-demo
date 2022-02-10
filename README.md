@@ -1,3 +1,3 @@
 # microfrontends-demo
 
-TODO: Text here...
+Tip: Tracking shows the changes!

@@ -2,7 +2,7 @@
   "name": "run",
   "scripts": {
     "install-all": "concurrently \"cd basket-badge && npm i\" \"cd basket-card && npm i\" \"cd container && npm i\" \"cd event-store && npm i\" \"cd product-list && npm i\" \"cd tracking && npm i\"",
-    "start": "concurrently \"cd basket-badge && npm start\" \"cd basket-card && npm start\" \"cd container && npm start\" \"cd event-store && npm i\" \"cd product-list && npm start\" \"cd tracking && npm start\""
+    "start": "concurrently \"cd basket-badge && npm start\" \"cd basket-card && npm start\" \"cd container && npm start\" \"cd product-list && npm start\" \"cd tracking && npm start\""
   },
   "devDependencies": {
     "concurrently": "^7.0.0"

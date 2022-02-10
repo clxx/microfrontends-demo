@@ -1,6 +1,19 @@
-import { eventStore } from "event-store";
+import { all, subscribe } from "event-store";
 
 export function mount() {
-  eventStore.set("tracking", "payload");
-  console.log(eventStore);
+  const knownEvents = new Set();
+
+  function trackEvent(eventId, eventData) {
+    if (!knownEvents.has(eventId)) {
+      knownEvents.add(eventId);
+      console.log("tracking", eventData);
+    }
+  }
+
+  subscribe(trackEvent);
+
+  for (const [eventId] of all()) {
+    // Track only new events, not preloaded ones...
+    knownEvents.add(eventId);
+  }
 }
