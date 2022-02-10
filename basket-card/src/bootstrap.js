@@ -41,7 +41,7 @@ export function mount(elementId) {
     }
     document.getElementById(
       elementId
-    ).innerHTML = `<table><caption>Basket&nbsp;Card</caption>${rows}</table>`;
+    ).innerHTML = `<table><caption style="text-align: left;">Basket&nbsp;Card</caption>${rows}</table>`;
   }
 
   subscribe((eventId, eventData) => {

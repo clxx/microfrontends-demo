@@ -9,6 +9,7 @@
     "webpack-dev-server": "4.7.4"
   },
   "dependencies": {
+    "event-store": "file:../event-store",
     "nanoid": "^3.2.0"
   }
 }

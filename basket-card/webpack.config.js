@@ -16,8 +16,7 @@ module.exports = {
       shared: [
         {
           "event-store": {
-            import: "../event-store",
-            requiredVersion: require("../event-store/package.json").version,
+            requiredVersion: "1.0.0",
             singleton: true,
           },
         },
