@@ -1,5 +1,5 @@
 {
-  "name": "basket-card",
+  "name": "shopping-cart-card",
   "scripts": {
     "start": "webpack serve"
   },

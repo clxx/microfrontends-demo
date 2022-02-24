@@ -4,11 +4,11 @@ const ModuleFederationPlugin =
 module.exports = {
   mode: "development",
   devServer: {
-    port: 3001,
+    port: 3002,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "basketBadge",
+      name: "shoppingCartCard",
       filename: "remoteEntry.js",
       exposes: {
         "./Module": "./src/bootstrap",

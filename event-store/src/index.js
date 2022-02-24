@@ -24,7 +24,7 @@ export function all() {
 
 // Simulate a preload from the server...
 add(nanoid(), {
-  type: "UPDATE_BASKET",
+  type: "UPDATE_SHOPPING_CART",
   time: Date.now(),
   source: "product-list",
   payload: {

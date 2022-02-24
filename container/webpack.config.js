@@ -10,8 +10,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
-        basketBadge: "basketBadge@http://localhost:3001/remoteEntry.js",
-        basketCard: "basketCard@http://localhost:3002/remoteEntry.js",
+        shoppingCartBadge: "shoppingCartBadge@http://localhost:3001/remoteEntry.js",
+        shoppingCartCard: "shoppingCartCard@http://localhost:3002/remoteEntry.js",
         productList: "productList@http://localhost:3003/remoteEntry.js",
         tracking: "tracking@http://localhost:3004/remoteEntry.js",
       },

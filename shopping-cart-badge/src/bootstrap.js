@@ -6,7 +6,7 @@ export function mount(elementId) {
   let quantitySum = 0;
 
   function updateQuantity(eventId, eventData) {
-    if (eventData.type !== "UPDATE_BASKET" || knownEvents.has(eventId)) {
+    if (eventData.type !== "UPDATE_SHOPPING_CART" || knownEvents.has(eventId)) {
       return;
     }
     knownEvents.add(eventId);
@@ -16,7 +16,7 @@ export function mount(elementId) {
   function updateDocument() {
     document.getElementById(
       elementId
-    ).innerHTML = `<p>Basket Badge: ${quantitySum}</p>`;
+    ).innerHTML = `<p>Shopping Cart Badge: ${quantitySum}</p>`;
   }
 
   subscribe((eventId, eventData) => {

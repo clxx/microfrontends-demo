@@ -19,7 +19,7 @@ export function mount(elementId) {
   ]);
 
   function updateQuantities(eventId, eventData) {
-    if (eventData.type !== "UPDATE_BASKET" || knownEvents.has(eventId)) {
+    if (eventData.type !== "UPDATE_SHOPPING_CART" || knownEvents.has(eventId)) {
       return;
     }
     knownEvents.add(eventId);
@@ -42,7 +42,7 @@ export function mount(elementId) {
     }
     document.getElementById(
       elementId
-    ).innerHTML = `<table><caption style="text-align: left;">Basket Card</caption>${rows}</table>`;
+    ).innerHTML = `<table><caption style="text-align: left;">Shopping Cart Card</caption>${rows}</table>`;
   }
 
   subscribe((eventId, eventData) => {

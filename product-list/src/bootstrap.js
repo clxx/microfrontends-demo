@@ -11,7 +11,7 @@ export function mount(elementId) {
   ]);
 
   function updateQuantities(eventId, eventData) {
-    if (eventData.type !== "UPDATE_BASKET" || knownEvents.has(eventId)) {
+    if (eventData.type !== "UPDATE_SHOPPING_CART" || knownEvents.has(eventId)) {
       return;
     }
     knownEvents.add(eventId);
@@ -28,24 +28,24 @@ export function mount(elementId) {
   <tr>
     <td>Lemonade (PRV)</td>
     <td>${quantities.get(1203)}</td>
-    <td><button onclick="updateBasket(1203, 1)">+</button></td>
-    <td><button onclick="updateBasket(1203, -1)"${
+    <td><button onclick="updateShoppingCart(1203, 1)">+</button></td>
+    <td><button onclick="updateShoppingCart(1203, -1)"${
       quantities.get(1203) ? "" : " disabled"
     }>-</button></td>
   </tr>
   <tr>
     <td>Beer (PRV)</td>
     <td>${quantities.get(7381)}</td>
-    <td><button onclick="updateBasket(7381, 1)">+</button></td>
-    <td><button onclick="updateBasket(7381, -1)"${
+    <td><button onclick="updateShoppingCart(7381, 1)">+</button></td>
+    <td><button onclick="updateShoppingCart(7381, -1)"${
       quantities.get(7381) ? "" : " disabled"
     }>-</button></td>
   </tr>
   <tr>
     <td>Water (PRV)</td>
     <td>${quantities.get(3043)}</td>
-    <td><button onclick="updateBasket(3043, 1)">+</button></td>
-    <td><button onclick="updateBasket(3043, -1)"${
+    <td><button onclick="updateShoppingCart(3043, 1)">+</button></td>
+    <td><button onclick="updateShoppingCart(3043, -1)"${
       quantities.get(3043) ? "" : " disabled"
     }>-</button></td>
   </tr>
@@ -53,9 +53,9 @@ export function mount(elementId) {
 `;
   }
 
-  window.updateBasket = function (productId, quantity) {
+  window.updateShoppingCart = function (productId, quantity) {
     add(nanoid(), {
-      type: "UPDATE_BASKET",
+      type: "UPDATE_SHOPPING_CART",
       time: Date.now(),
       source: "product-list",
       payload: {
