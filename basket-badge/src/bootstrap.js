@@ -16,7 +16,7 @@ export function mount(elementId) {
   function updateDocument() {
     document.getElementById(
       elementId
-    ).innerHTML = `<p>Basket&nbsp;Badge:&nbsp;${quantitySum}</p>`;
+    ).innerHTML = `<p>Basket Badge: ${quantitySum}</p>`;
   }
 
   subscribe((eventId, eventData) => {

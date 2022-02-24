@@ -3,7 +3,8 @@ import { all, subscribe } from "event-store";
 export function mount(elementId) {
   const knownEvents = new Set();
 
-  // Normally you would load the product info from the appropriate microservice
+  // Normally you would load the product info
+  // from the appropriate PIM microservice
   // as they are intentionally not part of the event!
   const productNames = new Map([
     [1203, "Lemonade (Shopping Cart)"],
@@ -41,7 +42,7 @@ export function mount(elementId) {
     }
     document.getElementById(
       elementId
-    ).innerHTML = `<table><caption style="text-align: left;">Basket&nbsp;Card</caption>${rows}</table>`;
+    ).innerHTML = `<table><caption style="text-align: left;">Basket Card</caption>${rows}</table>`;
   }
 
   subscribe((eventId, eventData) => {

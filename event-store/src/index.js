@@ -22,7 +22,6 @@ export function all() {
   return eventStore;
 }
 
-// return;
 // Simulate a preload from the server...
 add(nanoid(), {
   type: "UPDATE_BASKET",
