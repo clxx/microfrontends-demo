@@ -9,4 +9,5 @@ Tip: Tracking shows the changes!
 * TODO: add aggregate id (a faked session id)
 * TODO: what else add aggregate id (a faked session id)
 * TODO: Read https://github.com/oskardudycz/EventSourcing.NetCore
+* TOOD: Read https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing
 * TODO: Cf. with https://github.com/jet/equinox
